@@ -39,9 +39,16 @@ p {
   border-radius: 20px;
   box-shadow: 0 2px 4px hsla(0, 0%, 0%, 40%);
   color: hsla(0, 0%, 0%, 0%);
+  cursor: pointer;
   font-size: 3rem;
   height: 10rem;
   position: relative;
+
+  &:focus,
+  &:hover {
+    transform: scale(1.025);
+    box-shadow: 0 1px 6px hsla(0, 0%, 0%, 30%);
+  }
 
   &::after {
     color: hsla(0, 0%, 0%, 50%);
