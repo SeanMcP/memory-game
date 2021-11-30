@@ -22,7 +22,7 @@ gameEl.addEventListener("click", (event) => {
   if (gameEl.dataset.state === "frozen" || target.dataset.state) {
     return event.preventDefault();
   }
-  if (target?.dataset.type === "card") {
+  if (target.dataset.type === "card") {
     target.dataset.state = "active";
     if (gameEl.dataset.last) {
       if (target.textContent === gameEl.dataset.last) {
