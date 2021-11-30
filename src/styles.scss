@@ -1,10 +1,5 @@
 $text: hsl(0, 0%, 30%);
 
-html,
-body {
-  height: 100%;
-}
-
 body {
   color: $text;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -25,23 +20,24 @@ p {
 }
 
 #game {
+  --card-size: 15vh;
   display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(4, 8rem);
+  gap: 2vh;
+  grid-template-columns: repeat(4, var(--card-size));
   justify-content: center;
-  padding: 20px;
+  padding: 2vh;
 }
 
 [data-type="card"] {
   --background-color-lightness: 90%;
   background-color: hsl(220, 20%, var(--background-color-lightness));
-  border: 10px solid white;
-  border-radius: 20px;
+  border: 1vh solid white;
+  border-radius: 2vh;
   box-shadow: 0 2px 4px hsla(0, 0%, 0%, 40%);
   color: hsla(0, 0%, 0%, 0%);
   cursor: pointer;
-  font-size: 3rem;
-  height: 10rem;
+  font-size: 5vh;
+  height: var(--card-size);
   position: relative;
 
   &:focus,
@@ -53,10 +49,10 @@ p {
   &::after {
     color: hsla(0, 0%, 0%, 50%);
     content: attr(data-key);
-    font-size: 2rem;
+    font-size: 3vh;
     position: absolute;
-    right: 10px;
-    bottom: 10px;
+    right: 1vh;
+    bottom: 1vh;
   }
 
   &[data-state] {
