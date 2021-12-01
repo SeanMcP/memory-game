@@ -1,7 +1,25 @@
 import { selectEmojis } from "./shuffle";
+
+function getCardCount() {
+  const usp = new URLSearchParams(location.search);
+  const param: null | string = usp.get("count");
+  const count = parseInt(param);
+
+  /**
+   * Count is not NaN and is even
+   */
+  if (count && count % 2 === 0 && count >= 2 && count <= 16) {
+    return count;
+  } else {
+    return 16;
+  }
+}
+
 const gameEl = document.getElementById("game");
-const cardCount = 16;
+const cardCount = getCardCount();
 const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+gameEl.style.setProperty("--columns", Math.ceil(Math.sqrt(cardCount)));
 
 function round() {
   delete gameEl.dataset.count;
