@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "prebuild": "rm -rf docs/*.js* docs/*.css*",
+    "prebuild": "rm -rf docs/*",
     "build": "parcel build src/index.html --dist-dir docs/ --public-url ./",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0",
-    "parcel": "^2.0.0"
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0"
   }
 }
